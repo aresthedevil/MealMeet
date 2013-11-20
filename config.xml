@@ -3,10 +3,10 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "com.phonegap.aresthedevil.helloworld"
         version = "1.0">
-  <name>Hello World</name>
+  <name>Meal Meet</name>
 
   <description>
-    Hello World
+    Meal Meet
   </description>
 
   <author email="aresthedevil@gmail.com">
