@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     $('#body').empty();
-    $('#body').html("<h3>hello world</h3>");
+    var url = "http://symfony.p181457.webspaceconfig.de/app_dev.php";
+    $('#body').load(url);
 })
 
