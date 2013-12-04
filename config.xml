@@ -35,7 +35,7 @@
   <!-- access external resources -->
   <access origin="*" subdomains="true" />
 
-  <icon src="/src/icon.png" width="128" height="128"/> 
+  <icon src="icon.png" width="128" height="128"/> 
 
   <preference name="phonegap-version" value="2.9.0" />
   <preference name="orientation" value="default" />
