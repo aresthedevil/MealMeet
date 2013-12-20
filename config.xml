@@ -33,9 +33,12 @@
   <!-- <gap:plugin name="com.phonegap.plugins.barcodescanner" /> -->
   
   <!-- access external resources -->
-  <access origin="*" subdomains="true" />
+  <access origin="http://symfony.p181457.webspaceconfig.de" subdomains="true" />
 
   <icon src="icon.png" width="128" height="128"/> 
+
+  <gap:platform name="android" />
+	
 
   <preference name="phonegap-version" value="2.9.0" />
   <preference name="orientation" value="default" />
