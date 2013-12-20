@@ -31,6 +31,7 @@
   
   <!-- plugins -->
   <!-- <gap:plugin name="com.phonegap.plugins.barcodescanner" /> -->
+ 
   
   <!-- access external resources -->
   <access origin="http://symfony.p181457.webspaceconfig.de" subdomains="true" />
