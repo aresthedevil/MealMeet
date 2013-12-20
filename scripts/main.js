@@ -7,6 +7,4 @@
 	        console.log(url + " not loaded");
 	    });
 	});
-	
-});
 
