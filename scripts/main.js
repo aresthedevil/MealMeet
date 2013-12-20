@@ -5,12 +5,11 @@
     $('#body').load(url, function () {
 	        $('#base').attr('href', url);            
 	        var content = $('#body').html();
-	    	$('#body').html(content).ready(function(){
+	    	$('#body').html(content, function(){
 	    		$('#body').show();
 	    	$('#spinningwheel').hide();
+	    	console.log(url + " loaded");
 	    	});
-	    	
-            console.log(url + " loaded");
 	    }).fail(function () {
 	        console.log(url + " not loaded");
 	    });
