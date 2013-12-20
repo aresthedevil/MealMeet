@@ -5,9 +5,11 @@
     $('#body').load(url, function () {
 	        $('#base').attr('href', url);            
 	        var content = $('#body').html();
-	    	$('#body').html(content);
-	    	$('#body').show();
+	    	$('#body').html(content).done(function(){
+	    		$('#body').show();
 	    	$('#spinningwheel').hide();
+	    	});
+	    	
             console.log(url + " loaded");
 	    }).fail(function () {
 	        console.log(url + " not loaded");
