@@ -3,7 +3,9 @@
 	
 });
 
-$("#test").click(function() {
+$("#test").click(function () {
+    alert("drin");
+
     var url = "http://symfony.p181457.webspaceconfig.de";
     console.log(url);
     $('#body').load(url, function() {
