@@ -6,6 +6,7 @@
 	        $('#base').attr('href', url);
         $('#spinningwheel').hide();
 	    	console.log(url + " loaded");
+	    	location.reload();
 	    }).fail(function () {
 	        console.log(url + " not loaded");
 	    });
