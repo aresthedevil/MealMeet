@@ -4,9 +4,9 @@
 	    console.log(url);
     $('#body').load(url, function () {
 	        $('#base').attr('href', url);
-        $('#spinningwheel').hide();
+            $('#spinningwheel').hide();
 	    	console.log(url + " loaded");
-	    	location.reload();
+	    	$('#body').reload();
 	    }).fail(function () {
 	        console.log(url + " not loaded");
 	    });
