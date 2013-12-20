@@ -5,8 +5,9 @@
     $('#body').load(url, function () {
 	        $('#base').attr('href', url);
             $('#spinningwheel').hide();
-	    	console.log(url + " loaded");
-	    	$('#body').fadeOut().fadeIn();
+            console.log(url + " loaded");
+        var content = $('#body').html();
+	    	$('#body').html(content);
 	    }).fail(function () {
 	        console.log(url + " not loaded");
 	    });
