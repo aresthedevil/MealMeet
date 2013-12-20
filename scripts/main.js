@@ -5,7 +5,7 @@
     $('#body').load(url, function () {
 	        $('#base').attr('href', url);            
 	        var content = $('#body').html();
-	    	$('#body').html(content).done(function(){
+	    	$('#body').html(content).ready(function(){
 	    		$('#body').show();
 	    	$('#spinningwheel').hide();
 	    	});
