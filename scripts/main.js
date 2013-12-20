@@ -1,5 +1,4 @@
-﻿$(document).ready(function () {
-    $('#body').empty();
+﻿$("#test").click(function () {
     var url = "http://symfony.p181457.webspaceconfig.de";
     console.log(url);
     $('#body').load(url, function(){
