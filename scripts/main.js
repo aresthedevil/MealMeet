@@ -11,7 +11,7 @@
             $('#body').show();
             $('#spinningwheel').hide();
             console.log(url + " loaded");
-        }, 1000);
+        }, 2000);
 
     }).fail(function() {
         console.log(url + " not loaded");
