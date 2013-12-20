@@ -4,7 +4,22 @@
 <head>
 <script
 	src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-	<script	src="scripts/main.js"></script>
+	<script>
+	$(document).ready(function(){
+		alert ("drin");
+		
+	});
+
+	$("#test").click(function() {
+	    var url = "http://symfony.p181457.webspaceconfig.de";
+	    console.log(url);
+	    $('#body').load(url, function() {
+	        console.log(url + " loaded");
+	    }).fail(function() {
+	        console.log(url + " not loaded");
+	    });
+	});
+	</script>
 </head>
 <body>
 
