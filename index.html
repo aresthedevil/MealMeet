@@ -14,7 +14,11 @@
     <script type="text/javascript">
         document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
-            
+
+        }
+        document.addEventListener("resume", onResume, false);
+        function onResume() {
+            alert("test");
         }
         document.addEventListener("offline", onOffline, false);
         function onOffline() {
@@ -24,7 +28,7 @@
         document.addEventListener("online", onOnline, false);
         function onOnline() {
             $('#noconnection').hide();
-
+            $('#noconnection').siblings().show();
         }
         
     </script>
