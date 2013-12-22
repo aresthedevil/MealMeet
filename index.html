@@ -25,7 +25,8 @@
         var online = false;
         
         function loadcontent(){
-        	  console.log(url);
+            console.log(url);
+            $('#body').empty();
               $('#body').load(url, function() {
                   var content = $('#body').html();
                   $('#body').html(content);
@@ -41,7 +42,7 @@
         }
         
         function onDeviceReady() {
-        	alert("ready");
+            location.reload(true);
            if (navigator.network.connection.type!=Connection.NONE) {
         	   loadcontent();
             }
