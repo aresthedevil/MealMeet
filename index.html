@@ -11,37 +11,65 @@
     <base  id="base" />    
     <script  src="phonegap.js"></script>
     <script type="text/javascript" src="lib/jquery-2.0.3.min.js"></script> 
-    <script type="text/javascript" src="scripts/main.js"></script>
     <script type="text/javascript">
-        document.addEventListener("deviceready", onDeviceReady, false);
-        function onDeviceReady() {
-        	
+    
+        function Onload() {
+            document.addEventListener("offline", onOffline, false);
+            document.addEventListener("resume", onResume, false);
+            document.addEventListener("online", onOnline, false);
+            document.addEventListener("deviceready", onDeviceReady, false);
+
         }
-        document.addEventListener("resume", onResume, false);
+        var url = "http://symfony.p181457.webspaceconfig.de";
+        var online = false;
+        function onDeviceReady() {
+            if (online) {
+                console.log(url);
+                $('#body').load(url, function() {
+                    var content = $('#body').html();
+                    $('#body').html(content);
+                    setTimeout(function() {
+                        $('#body').show();
+                        $('#spinningwheel').hide();
+                        console.log(url + " loaded");
+                    }, 3000);
+
+                }).fail(function() {
+                    console.log(url + " not loaded");
+                });
+            }
+        }
         function onResume() {
             
         }
-        document.addEventListener("offline", onOffline, false);
+       
+        
         function onOffline() {
-            $('#noconnection').siblings().hide();
-            $('#noconnection').show();
+            var e = document.getElementById("connection");
+            e.style.display = "none";
+            e = document.getElementById("noconnection");
+            e.style.display = "block";
+            online = false;
         }
-        document.addEventListener("online", onOnline, false);
         function onOnline() {
+            $('#base').attr('href', url);
             $('#noconnection').hide();
-            $('#noconnection').siblings().show();
+            $('#connection').show();
+            online = true;
         }
         
     </script>
 </head>
     <body style="height:100%; width:100%; top:0px; left:0px; margin:0; padding:0;">
         <div style="background-color: rgb(243,243,243); width: 100%; height: 100%;">
-            <div id="spinningwheel" style="text-align: center; vertical-align: middle;  padding-bottom: 25%; padding-top: 25%;" >               
+            <div id="connection">
+                <div id="spinningwheel" style="text-align: center; vertical-align: middle;  padding-bottom: 25%; padding-top: 25%;" >               
                     <div style="clear:both;"><img src="pictures/icon.png" style=" vertical-align: middle; " /></div>
                     <div style="clear:both;"><img src="pictures/spinning-wheel.gif" style="vertical-align: middle;" /></div>
+                </div>
+                <div id="body" style="display: none;">
+                </div>
             </div>
-            <div id="body" style="display: none;">
-            </div>	
             <div id="noconnection" style="display: none;">
                 <p>Teste sie bitte ihre Internetverbindung </p>
             </div>
