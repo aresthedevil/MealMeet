@@ -23,8 +23,8 @@
         var url = "http://symfony.p181457.webspaceconfig.de";
         var online = false;
         function onDeviceReady() {
-        	setTimeout(function(){},1000);
-            if (online) {
+        	
+            if (navigator.network.connection.type!=Connection.NONE) {
                 console.log(url);
                 $('#body').load(url, function() {
                     var content = $('#body').html();
