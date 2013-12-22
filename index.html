@@ -24,23 +24,25 @@
         var url = "http://symfony.p181457.webspaceconfig.de";
         var online = false;
         
-        function onDeviceReady() {
-            console.log(navigator.network.connection.type);
-           console.log(Connection.NONE);
-            if (navigator.network.connection.type!=Connection.NONE) {
-                console.log(url);
-                $('#body').load(url, function() {
-                    var content = $('#body').html();
-                    $('#body').html(content);
-                    setTimeout(function() {
-                        $('#body').show();
-                        $('#spinningwheel').hide();
-                        console.log(url + " loaded");
-                    }, 3000);
+        function loadcontent(){
+        	  console.log(url);
+              $('#body').load(url, function() {
+                  var content = $('#body').html();
+                  $('#body').html(content);
+                  setTimeout(function() {
+                      $('#body').show();
+                      $('#spinningwheel').hide();
+                      console.log(url + " loaded");
+                  }, 3000);
 
-                }).fail(function() {
-                    console.log(url + " not loaded");
-                });
+              }).fail(function() {
+                  console.log(url + " not loaded");
+              });
+        }
+        
+        function onDeviceReady() {
+           if (navigator.network.connection.type!=Connection.NONE) {
+        	   loadcontent();
             }
         }
         function onResume() {
@@ -60,6 +62,7 @@
             $('#noconnection').hide();
             $('#connection').show();
             online = true;
+            loadcontent();
         }
         
     </script>
