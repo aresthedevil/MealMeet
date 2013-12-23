@@ -36,7 +36,11 @@
                       console.log(url + " loaded");
                   }, 3000);
 
-              }).fail(function() {
+              }).fail(function () {
+                  $('#connection').hide();
+                  $('#error').show();
+                  $('#standarderror').hide();
+                  $('#noserver').show();
                   console.log(url + " not loaded");
               });
         }
@@ -45,7 +49,13 @@
             $.cookie("PHPSESSID",null);
            if (navigator.network.connection.type!=Connection.NONE) {
         	   loadcontent();
-            }
+           }
+           $('#but_neu').click(function () {
+               $('#error').hide();
+               $('#standarderror').show();
+               $('#spinningwheel').show();
+                loadcontent();
+            });
         }
         function onResume() {
             
@@ -55,14 +65,21 @@
         function onOffline() {
             var e = document.getElementById("connection");
             e.style.display = "none";
-            e = document.getElementById("noconnection");
+            e = document.getElementById("error");
             e.style.display = "block";
+            e = document.getElementById("nointernet");
+            e.style.display = "block";
+            e = document.getElementById("standarderror");
+            e.style.display = "none";
+
             online = false;
         }
         function onOnline() {
             $('#base').attr('href', url);
-            $('#noconnection').hide();
+            $('#error').hide();
             $('#connection').show();
+            $('#standarderror').show();
+            $('#spinningwheel').show();
             online = true;
             loadcontent();
         }
@@ -79,8 +96,11 @@
                 <div id="body" style="display: none;">
                 </div>
             </div>
-            <div id="noconnection" style="display: none;">
-                <p>Teste sie bitte ihre Internetverbindung </p>
+            <div id="error" style="display: none;">
+                <div id="standarderror"><p>Unbekannter Fehler </p></div>
+                <div id="nointernet" style="display:none;"> <p>Teste sie bitte ihre Internetverbindung </p></div>
+                <div id="noserver" style="display:none;"> <p>Der Server ist im Moment nicht erreichbar </p> <button id="but_neu"type="button">Erneut versuchen?</button></div>
+               
             </div>
         </div>  
     </body>
