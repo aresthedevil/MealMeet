@@ -17,11 +17,7 @@
         document.addEventListener("offline", onOffline, false);
         document.addEventListener("resume", onResume, false);
         document.addEventListener("online", onOnline, false);
-           
-        //var pictureSource = "";
-       // var  destinationType = "";
-       // var currentid = "";
-        
+
        	var url = "http://symfony.p181457.webspaceconfig.de";
         var online = false;
         
@@ -48,14 +44,7 @@
         
         function onDeviceReady() {
             $.cookie("PHPSESSID",null);
-            console.log("da");
-           // alert('da');
-        //    pictureSource = navigator.camera.PictureSourceType;
-         //  alert(pictureSource);
-         //   destinationType = navigator.camera.DestinationType;
-         //   alert(destinationType);
-            
-            
+          
            if (navigator.network.connection.type!=Connection.NONE) {
         	   loadcontent();
            }
@@ -93,29 +82,7 @@
             loadcontent();
         }
         
-        function uploadpicture(var typ, var userid ){ 
-        	currentid = userid;
-        	if(typ == "profil"){
-        	//	navigator.camera.getPicture(upload_profile, onFail, {quality:50, destinationType: destinationType.FILE_uri, sourceType: pictureSource.SAVEDPHOTOALBUM})                
-        	}
-        	else if(typ == "kitchen"){
-        	//	navigator.camera.getPicture(upload_kitchen, onFail, {quality:50, destinationType: destinationType.FILE_uri, sourceType: pictureSource.SAVEDPHOTOALBUM})
-        	}
-        }
-        
-        function onFail(){
-        	var e = document.getElementById("connection");
-            e.style.display = "none";
-            e = document.getElementById("error");
-            e.style.display = "block";           
-        }
-        
-		function upload_kitchen(){
-        	
-        }
-		function upload_profile(){
-			
-		}
+     
         
         
     </script>
