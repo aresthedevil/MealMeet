@@ -49,8 +49,9 @@
         function onDeviceReady() {
             $.cookie("PHPSESSID",null);
             pictureSource = navigator.camera.PictureSourceType;
+            console.log(pictureSource);
             destinationType = navigator.camera.DestinationType;                 
-                      
+            console.log(destinationType);          
            if (navigator.network.connection.type!=Connection.NONE) {
         	   //loadcontent();
         	  
