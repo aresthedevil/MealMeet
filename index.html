@@ -28,7 +28,8 @@
         function loadcontent(){
             console.log(url);
             $('#body').empty();
-              $('#body').load(url, function() {
+            window.location = url;
+             /* $('#body').load(url, function() {
                   var content = $('#body').html();
                   $('#body').html(content);
                   setTimeout(function() {
@@ -44,6 +45,7 @@
                   $('#noserver').show();
                   console.log(url + " not loaded");
               });
+              */
         }
         
         function onDeviceReady() {
