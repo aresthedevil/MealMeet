@@ -53,8 +53,10 @@
             destinationType = navigator.camera.DestinationType;                 
                      
            if (navigator.network.connection.type!=Connection.NONE) {
+        	  
+        	   alert(pictureSource);
         	   
-        	   loadcontent();
+        	   //loadcontent();
         	  
            }
            $('#but_neu').click(function () {
@@ -88,7 +90,7 @@
             $('#standarderror').show();
             $('#spinningwheel').show();
             online = true;
-            loadcontent();
+            //loadcontent();
         }
         
         function uploadpicture( typ,  userid ){ 
