@@ -49,10 +49,11 @@
         function onDeviceReady() {
             $.cookie("PHPSESSID",null);
             pictureSource = navigator.camera.PictureSourceType;
-            alert(pictureSource);
+           
             destinationType = navigator.camera.DestinationType;                 
-            alert(destinationType);          
+                     
            if (navigator.network.connection.type!=Connection.NONE) {
+        	   alert('ready');
         	   //loadcontent();
         	  
            }
