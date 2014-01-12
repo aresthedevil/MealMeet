@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "com.phonegap.aresthedevil.helloworld"
-        version = "1.2">
+        version = "1.3">
   <name>Meal Meet</name>
 
   <description>
@@ -31,7 +31,7 @@
   
   <!-- plugins -->
   <!-- <gap:plugin name="com.phonegap.plugins.barcodescanner" /> -->
- 
+ <gap:plugin name="org.apache.cordova.camera" />
   
   <!-- access external resources -->
   <access origin="http://symfony.p181457.webspaceconfig.de" subdomains="true" />
@@ -41,7 +41,7 @@
   <gap:platform name="android" />
 	
 
-  <preference name="phonegap-version" value="2.9.0" />
+  <preference name="phonegap-version" value="3.1.0" />
   <preference name="orientation" value="default" />
   <preference name="target-device" value="universal" />
   <preference name="splash-screen-duration" value="1000" />
