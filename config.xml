@@ -36,6 +36,7 @@
  <gap:plugin name="org.apache.cordova.network-information" />
  <gap:plugin name="org.apache.cordova.file" />
  <gap:plugin name="org.apache.cordova.console" />
+ <gap:plugin name="org.apache.cordova.file-transfer" />
   
   <!-- access external resources -->
   <access origin="*" subdomains="true" />
