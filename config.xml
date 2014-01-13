@@ -34,7 +34,7 @@
  <gap:plugin name="org.apache.cordova.camera" />
   
   <!-- access external resources -->
-  <access origin="http://symfony.p181457.webspaceconfig.de" subdomains="true" />
+  <access origin="*" subdomains="true" />
 
   <icon src="icon.png" width="128" height="128"/> 
 
